@@ -30,14 +30,14 @@ class Part5TextCustomization : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Home5()
+            Home()
         }
     }
 }
 
 @Preview
 @Composable
-fun Home5() {
+private fun Home() {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -49,7 +49,7 @@ fun Home5() {
 }
 
 @Composable
-fun CustomText() {
+private fun CustomText() {
     Text(
         text = stringResource(id = R.string.app_name),
         modifier = Modifier
@@ -65,7 +65,7 @@ fun CustomText() {
 }
 
 @Composable
-fun CustomText2() {
+private fun CustomText2() {
     Text(
         buildAnnotatedString {
             withStyle(style = ParagraphStyle(textAlign = TextAlign.Center)) {
@@ -89,7 +89,7 @@ fun CustomText2() {
 }
 
 @Composable
-fun CustomText3() {
+private fun CustomText3() {
     Text(
         text = "Hello world"
             .repeat(20),

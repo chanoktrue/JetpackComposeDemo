@@ -19,14 +19,14 @@ class Part3RowActivity: ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Home3()
+            Home()
         }
     }
 }
 
 @Preview
 @Composable
-fun Home3() {
+private fun Home() {
 
 //    Column(
 //        modifier = Modifier
@@ -50,7 +50,7 @@ fun Home3() {
 }
 
 @Composable
-fun ColumnScope.CustomItem(weight: Float, color: Color = MaterialTheme.colors.primary) {
+private fun ColumnScope.CustomItem(weight: Float, color: Color = MaterialTheme.colors.primary) {
     Surface(
         modifier = Modifier
             .width(50.dp)
@@ -61,7 +61,7 @@ fun ColumnScope.CustomItem(weight: Float, color: Color = MaterialTheme.colors.pr
 }
 
 @Composable
-fun RowScope.CustomItem(weight: Float, color: Color = MaterialTheme.colors.primary) {
+private fun RowScope.CustomItem(weight: Float, color: Color = MaterialTheme.colors.primary) {
     Surface(
         modifier = Modifier
             .width(50.dp)

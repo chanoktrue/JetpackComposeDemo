@@ -20,14 +20,14 @@ class Part4BoxActivity: ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Home4()
+            Home()
         }
     }
 }
 
 @Preview
 @Composable
-fun Home4() {
+private fun Home() {
     Box(
         modifier = Modifier
             .fillMaxSize(),
@@ -45,7 +45,4 @@ fun Home4() {
         }
         
     }
-
-
-
 }

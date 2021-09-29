@@ -50,14 +50,14 @@ fun DefaultPreview() {
 
 @Preview
 @Composable
-fun Home0() {
+private fun Home() {
     val myText = "Test"
     val myLists = listOf<String>("AAA", "BBB", "CCC", "DDD")
     NamePicker(myText = myText, myLists = myLists)
 }
 
 @Composable
-fun NamePicker(myText: String, myLists: List<String>) {
+private fun NamePicker(myText: String, myLists: List<String>) {
     Column {
         Text(myText, style = TextStyle(fontSize = 30.sp))
 
@@ -74,7 +74,7 @@ fun NamePicker(myText: String, myLists: List<String>) {
 }
 
 @Composable
-fun NamePickerItem(name: String) {
+private fun NamePickerItem(name: String) {
     Text(
         name,
         Modifier.clickable {
