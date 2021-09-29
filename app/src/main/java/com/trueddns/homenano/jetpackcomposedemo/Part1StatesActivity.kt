@@ -25,14 +25,14 @@ class Part1StatesActivity: ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Home2()
+            Home1()
         }
     }
 }
 
 @Preview
 @Composable
-fun Home2() {
+fun Home1() {
     val title = "Test"
     val body = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
     ExpandableCard(title = title, body = body)
@@ -43,68 +43,42 @@ fun ExpandableCard(title: String, body: String) {
 
     var expaded by remember { mutableStateOf(false) }
     var expaded2 by remember { mutableStateOf(false) }
+    var expaded3 by remember { mutableStateOf(false) }
 
     Column {
 
+        for (i in 0..2) {
 
-        Card(
-            modifier = Modifier
-                .padding(16.dp)
-                .shadow(10.dp)
-                .fillMaxWidth()
-        ) {
+            Card(
+                modifier = Modifier
+                    .padding(16.dp)
+                    .shadow(10.dp)
+                    .fillMaxWidth()
+            ) {
 
-            Column(modifier = Modifier.fillMaxWidth()) {
+                Column(modifier = Modifier.fillMaxWidth()) {
 
-                Text(text = title,Modifier.padding(10.dp), textAlign = TextAlign.Center)
+                    Text(text = title, Modifier.padding(10.dp), textAlign = TextAlign.Center)
 
-                if (expaded) {
+                    if (expaded) {
 
-                    Text(
-                        text = body,
-                        Modifier.padding(10.dp),
-                        style = TextStyle(textAlign = TextAlign.Justify)
-                    )
+                        Text(
+                            text = body,
+                            Modifier.padding(10.dp),
+                            style = TextStyle(textAlign = TextAlign.Justify)
+                        )
 
-                    IconButton(onClick = { expaded = false }) {
-                        Text(text = "ปิด", style = TextStyle(color = Color.Black))
-                    }
-                } else {
-                    IconButton(onClick = { expaded = true }) {
-                        Text(text = "เปิด", style = TextStyle(color = Color.Red))
-                    }
-                }
-            }
-        }
-
-        Card(
-            modifier = Modifier
-                .padding(16.dp)
-                .shadow(10.dp)
-                .fillMaxWidth()
-        ) {
-
-            Column(modifier = Modifier.fillMaxWidth()) {
-
-                Text(text = title,Modifier.padding(10.dp), textAlign = TextAlign.Center)
-
-                if (expaded2) {
-
-                    Text(
-                        text = body,
-                        Modifier.padding(10.dp),
-                        style = TextStyle(textAlign = TextAlign.Justify)
-                    )
-
-                    IconButton(onClick = { expaded2 = false }) {
-                        Text(text = "ปิด", style = TextStyle(color = Color.Black))
-                    }
-                } else {
-                    IconButton(onClick = { expaded2 = true }) {
-                        Text(text = "เปิด", style = TextStyle(color = Color.Red))
+                        IconButton(onClick = { expaded = false }) {
+                            Text(text = "ปิด", style = TextStyle(color = Color.Black))
+                        }
+                    } else {
+                        IconButton(onClick = { expaded = true }) {
+                            Text(text = "เปิด", style = TextStyle(color = Color.Red))
+                        }
                     }
                 }
             }
+
         }
     }
 }

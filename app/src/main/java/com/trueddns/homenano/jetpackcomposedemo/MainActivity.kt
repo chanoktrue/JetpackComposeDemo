@@ -50,7 +50,7 @@ fun DefaultPreview() {
 
 @Preview
 @Composable
-fun Home() {
+fun Home0() {
     val myText = "Test"
     val myLists = listOf<String>("AAA", "BBB", "CCC", "DDD")
     NamePicker(myText = myText, myLists = myLists)
@@ -60,9 +60,9 @@ fun Home() {
 fun NamePicker(myText: String, myLists: List<String>) {
     Column {
         Text(myText, style = TextStyle(fontSize = 30.sp))
-        
+
         Divider()
-        
+
         LazyColumn{
             item(myLists.none()) {
                 myLists.forEach { name ->
@@ -82,4 +82,4 @@ fun NamePickerItem(name: String) {
         },
         style = TextStyle(color = Color.Red)
     )
-} 
+}
